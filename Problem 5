@@ -1,0 +1,56 @@
+function frequency() {
+  const array = ['a', 'b', 'c', 'd', 'c', 'b', 'b', 'c', 'a', 'e', 'b', 'e'];
+  var a = 0;
+  var b = 0;
+  var c = 0;
+  var d = 0;
+  var e = 0;
+  var most;
+  var least;
+  //count the occurrences.
+  for (var i = 0; i < array.length; i++) {
+   switch(array[i]) {
+     case 'a':
+       a += 1;
+       break;
+     case 'b':
+       b += 1;
+       break;
+     case 'c':
+       c += 1;
+       break;
+     case 'd':
+       d += 1;
+       break;
+     case 'e':
+       e += 1 ;
+       break;
+   }
+  }
+  //find the most frequent.
+  if (a > b && a > c && a > d && a > e) {
+    most = "a";
+  } else if (b > a && b > c && b > d && b > e) {
+    most = "b";
+  } else if (c > a && c > b && c > d && c > e) {
+    most = "c";
+  } else if (d > a && d > b && d > c && d > e) {
+    most = "d";
+  } else {
+    most = "e";
+  }
+  //find the least frequent.
+  if (a < b && a < c && a < d && a < e) {
+    least = "a";
+  } else if (b < a && b < c && b < d && b < e) {
+    least = "b";
+  } else if (c < a && c < b && c < d && c < e) {
+    least = "c";
+  } else if (d < a && d < b && d < c && d < e) {
+    least = "d";
+  } else {
+    least = "e";
+  }
+  
+  alert("The most frequent item is: " + most + ". " + "The least frequent item is: " + least + ".");
+}
