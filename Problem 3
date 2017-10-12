@@ -1,0 +1,10 @@
+function rockRoll() {
+  const bands = ['Kiss', 'Aerosmith', 'ACDC', 'Led Zeppelin', 'Nickelback'];
+  for (var i = 0; i < bands.length; i++) {
+    if (bands[i] == "Nickelback") {
+      alert("I DON'T love Nickelback!");
+    } else {
+ 	  alert("I love " + bands[i] + "!");
+    }
+  }
+}
