@@ -1,0 +1,42 @@
+function bills(cost) {
+var breakdown = {};
+  
+if (cost / 100 >= 0.96) {
+  breakdown[100] = Math.floor(cost / 100);
+  cost = cost % 100;
+  if (cost > 95) {
+    breakdown[100] += 1;
+    return breakdown;
+  }
+}
+if (cost / 50 >= 0.92){
+  breakdown[50] = 1;
+  cost = cost - 50;
+}
+if (cost / 20 >= 1){
+  breakdown[20] = Math.floor(cost / 20);
+  cost = cost % 20;
+  if (cost > 15) {
+    breakdown[20] += 1;
+    return breakdown;
+  }
+}
+if (cost / 10 >= 1){
+  breakdown[10] = 1;
+  cost = cost - 10;
+  if (cost > 5) {
+    delete breakdown[10];
+    breakdown[20] = 1;
+    return breakdown;
+  }
+}
+if (cost > 5) {
+  breakdown[10] = 1;
+  return breakdown;
+}
+
+if (cost > 0){
+  breakdown[5] = 1;
+} 
+  return breakdown;
+}
